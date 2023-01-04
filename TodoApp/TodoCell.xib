@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TodoCell" rowHeight="314" id="oMW-3a-Qtc" customClass="TodoCell" customModule="TodoApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="389" height="314"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="oMW-3a-Qtc" id="mdl-gS-Wuh">
+                <rect key="frame" x="0.0" y="0.0" width="389" height="314"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="todoid: 01" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RFZ-EZ-OBD">
+                        <rect key="frame" x="14" y="9.9999999999999982" width="75.333333333333329" height="20.333333333333329"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="T5S-Mk-XLa">
+                        <rect key="frame" x="259" y="10" width="120" height="34.333333333333336"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ETe-jK-7rQ">
+                                <rect key="frame" x="0.0" y="0.0" width="55" height="34.333333333333336"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="수정"/>
+                                <connections>
+                                    <action selector="editButtonTapped:" destination="oMW-3a-Qtc" eventType="touchUpInside" id="g9J-BV-Ycq"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wav-Gz-DkY">
+                                <rect key="frame" x="65" y="0.0" width="55" height="34.333333333333336"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="삭제"/>
+                                <buttonConfiguration key="configuration" style="filled" title="삭제">
+                                    <color key="baseBackgroundColor" systemColor="systemIndigoColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="deleteButtonTapped:" destination="oMW-3a-Qtc" eventType="touchUpInside" id="Tly-AD-zbR"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="120" id="hu9-zf-KO7"/>
+                        </constraints>
+                    </stackView>
+                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ux5-sn-Xpg">
+                        <rect key="frame" x="330" y="65" width="51" height="31"/>
+                        <connections>
+                            <action selector="switchChanged:" destination="oMW-3a-Qtc" eventType="valueChanged" id="aKq-i0-ux2"/>
+                        </connections>
+                    </switch>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="할일 내용" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w9v-Wg-qKg">
+                        <rect key="frame" x="14" y="50.333333333333329" width="235" height="253.66666666666669"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="T5S-Mk-XLa" secondAttribute="trailing" constant="10" id="3XI-tF-O8e"/>
+                    <constraint firstItem="T5S-Mk-XLa" firstAttribute="leading" secondItem="w9v-Wg-qKg" secondAttribute="trailing" constant="10" id="8Ki-y0-22T"/>
+                    <constraint firstItem="RFZ-EZ-OBD" firstAttribute="leading" secondItem="mdl-gS-Wuh" secondAttribute="leading" constant="14" id="OBb-Fc-8F1"/>
+                    <constraint firstAttribute="bottom" secondItem="w9v-Wg-qKg" secondAttribute="bottom" constant="10" id="OnY-JV-n0V"/>
+                    <constraint firstItem="Ux5-sn-Xpg" firstAttribute="top" secondItem="T5S-Mk-XLa" secondAttribute="bottom" constant="20.666666666666664" id="RNf-lD-Ren"/>
+                    <constraint firstItem="w9v-Wg-qKg" firstAttribute="top" secondItem="RFZ-EZ-OBD" secondAttribute="bottom" constant="20" id="TlU-iH-IZ6"/>
+                    <constraint firstItem="T5S-Mk-XLa" firstAttribute="top" secondItem="RFZ-EZ-OBD" secondAttribute="top" id="WRt-Np-m0f"/>
+                    <constraint firstItem="Ux5-sn-Xpg" firstAttribute="trailing" secondItem="T5S-Mk-XLa" secondAttribute="trailing" id="hov-zL-Wr4"/>
+                    <constraint firstItem="RFZ-EZ-OBD" firstAttribute="top" secondItem="mdl-gS-Wuh" secondAttribute="top" constant="10" id="t6N-pB-k9w"/>
+                    <constraint firstItem="w9v-Wg-qKg" firstAttribute="leading" secondItem="RFZ-EZ-OBD" secondAttribute="leading" id="tkE-XU-lyl"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="contentLabel" destination="w9v-Wg-qKg" id="ZPh-OV-7pa"/>
+                <outlet property="selectionSwitch" destination="Ux5-sn-Xpg" id="hgc-Cp-a4a"/>
+                <outlet property="titleLabel" destination="RFZ-EZ-OBD" id="TVz-V8-SCE"/>
+            </connections>
+            <point key="canvasLocation" x="291.53846153846155" y="87.440758293838854"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemIndigoColor">
+            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
