@@ -65,6 +65,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CE7B070E2987EDB700A86AF3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CE9771F529588F2800CE3539 /* Main.storyboard */,
+				CE9771F329588F2800CE3539 /* ViewController.swift */,
+				CEC376022962B45D0051D2CA /* DetailTodoVC.swift */,
+				CE9772052958960000CE3539 /* TodoCell.swift */,
+				CE9772032958937500CE3539 /* TodoCell.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CE7B070F2987EDC800A86AF3 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				CEA2880E295967B50099DEDA /* TodosVM.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		CE9771E329588F2700CE3539 = {
 			isa = PBXGroup;
 			children = (
@@ -84,20 +104,16 @@
 		CE9771EE29588F2800CE3539 /* TodoApp */ = {
 			isa = PBXGroup;
 			children = (
-				CE9771F329588F2800CE3539 /* ViewController.swift */,
-				CEA2880E295967B50099DEDA /* TodosVM.swift */,
+				CEA2881029596B3E0099DEDA /* Model */,
+				CE7B070E2987EDB700A86AF3 /* Views */,
+				CE7B070F2987EDC800A86AF3 /* ViewModel */,
 				CEA2880B2959640A0099DEDA /* API */,
-				CE9772052958960000CE3539 /* TodoCell.swift */,
-				CE9772032958937500CE3539 /* TodoCell.xib */,
-				CE9771F529588F2800CE3539 /* Main.storyboard */,
-				CEC376022962B45D0051D2CA /* DetailTodoVC.swift */,
+				CEA28813295988B60099DEDA /* Extensions */,
 				CE9771F829588F2A00CE3539 /* Assets.xcassets */,
 				CE9771FA29588F2A00CE3539 /* LaunchScreen.storyboard */,
 				CE9771FD29588F2A00CE3539 /* Info.plist */,
 				CE9771EF29588F2800CE3539 /* AppDelegate.swift */,
 				CE9771F129588F2800CE3539 /* SceneDelegate.swift */,
-				CEA28813295988B60099DEDA /* Extensions */,
-				CEA2881029596B3E0099DEDA /* Data */,
 			);
 			path = TodoApp;
 			sourceTree = "<group>";
@@ -112,12 +128,12 @@
 			path = API;
 			sourceTree = "<group>";
 		};
-		CEA2881029596B3E0099DEDA /* Data */ = {
+		CEA2881029596B3E0099DEDA /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				CEA2881129596B4E0099DEDA /* TodosResponse.swift */,
 			);
-			path = Data;
+			path = Model;
 			sourceTree = "<group>";
 		};
 		CEA28813295988B60099DEDA /* Extensions */ = {

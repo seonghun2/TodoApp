@@ -18,11 +18,13 @@ class TodoCell: UITableViewCell {
     
     @IBOutlet weak var selectionSwitch: UISwitch!
     
-    var selectedTodo = BehaviorRelay<Int>(value: 0)
-    
-    var disposeBag = DisposeBag()
-    
     var todo: Todo?
+    
+    var selectedClosure: ((Int) -> ())?
+    
+    var editClosure: ((Int) -> ())?
+    
+    var deleteClosure: ((Int) -> ())?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -30,31 +32,25 @@ class TodoCell: UITableViewCell {
     
     func setUI(todo: Todo) {
         guard let id = todo.id else {return}
-        titleLabel.text = String(describing: id)
+        print(#function, id)
+        titleLabel.clipsToBounds = true
+        titleLabel.layer.cornerRadius = 5
+        titleLabel.text = "No. " + String(describing: id)
         contentLabel.text = todo.title
-        selectionSwitch.isOn = false
     }
     
     @IBAction func editButtonTapped(_ sender: UIButton){
-        
+        guard let id = todo?.id else { return }
+        editClosure?(id)
     }
     
     @IBAction func deleteButtonTapped(_ sender: UIButton){
-        
+        guard let id = todo?.id else { return }
+        deleteClosure?(id)
     }
     
     @IBAction func switchChanged(_ sender: UISwitch) {
-        selectionSwitch.rx.isOn.bind { isOn in
-            switch isOn {
-            case true:
-                guard let todo = self.todo,
-                      let id = todo.id else { return }
-                print(id)
-                self.selectedTodo.accept(id)
-                print(#function, self.selectedTodo.value)
-            case false:
-                print(isOn)
-            }
-        }
+        guard let id = todo?.id else { return }
+        selectedClosure?(id)
     }
 }

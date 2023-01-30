@@ -37,7 +37,6 @@ class DetailTodoVC: UIViewController {
     }
     
     @IBAction func backButtonTapped(_ sender: Any) {
-//        navigationController?.popViewController(animated: true)
+        navigationController?.popViewController(animated: true)
     }
-
 }

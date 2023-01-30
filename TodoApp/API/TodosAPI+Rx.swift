@@ -500,7 +500,6 @@ extension TodosAPI {
             .share(replay: 1)
     }
     
-    /// 클로저 기반 api 동시 처리 
     /// 선택된 할일들 삭제
     /// - Parameters:
     ///   - selectedTodoIds: 선택된 할일 id
@@ -522,7 +521,6 @@ extension TodosAPI {
             } // Observable<[Int]>
     }
     
-    /// 클로저 기반 api 동시 처리
     /// 선택된 할일들 삭제
     /// - Parameters:
     ///   - selectedTodoIds: 선택된 할일 id
@@ -541,7 +539,6 @@ extension TodosAPI {
         return Observable.merge(apiCallObservables).compactMap{ $0 }
     }
     
-    /// 클로저 기반 api 동시 처리
     /// 선택된 할일들 가져오기
     /// - Parameters:
     ///   - selectedTodoIds: 선택된 할일 id
